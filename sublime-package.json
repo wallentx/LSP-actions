@@ -1,7 +1,7 @@
 {
   "name": "LSP-actions",
   "description": "GitHub Actions language server integration for Sublime Text",
-  "author": "Your Name",
+  "author": "William Allen",
   "homepage": "https://github.com/wallentx/LSP-actions",
   "issues": "https://github.com/wallentx/LSP-actions/issues",
   "version": "0.1.0",
