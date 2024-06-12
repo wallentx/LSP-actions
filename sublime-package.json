@@ -1,0 +1,149 @@
+{
+  "name": "LSP-actions",
+  "description": "GitHub Actions language server integration for Sublime Text",
+  "author": "Your Name",
+  "homepage": "https://github.com/wallentx/LSP-actions",
+  "issues": "https://github.com/wallentx/LSP-actions/issues",
+  "version": "0.1.0",
+  "sublime_text": ">=4000",
+  "dependencies": [],
+  "contributions": {
+    "settings": [
+      {
+        "file_patterns": [
+          "/LSP-actions.sublime-settings"
+        ],
+        "schema": {
+          "$id": "sublime://settings/LSP-actions",
+          "allOf": [
+            {
+              "$ref": "sublime://settings/LSP-plugin-base"
+            },
+            {
+              "$ref": "sublime://settings/LSP-actions#/definitions/PluginConfig"
+            }
+          ],
+          "definitions": {
+            "PluginConfig": {
+              "properties": {
+                "settings": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "http.proxy": {
+                      "default": null,
+                      "description": "The URL of the proxy server that will be used when attempting to download a schema. If it is not set or it is undefined no proxy server will be used.",
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "http.proxyStrictSSL": {
+                      "default": false,
+                      "description": "If true the proxy server certificate should be verified against the list of supplied CAs",
+                      "type": "boolean"
+                    },
+                    "actions.completion": {
+                      "default": true,
+                      "description": "Enable/disable autocompletion feature",
+                      "type": "boolean"
+                    },
+                    "actions.customTags": {
+                      "default": [],
+                      "description": "Array of custom tags that the parser will validate against. Either an item in the array is a custom tag such as `\"!Ref\"` and it will automatically map `!Ref` to scalar or you can specify the type of the object !Ref should be e.g. `\"!Ref sequence\"`. The type of object can be either scalar (for strings and booleans), sequence (for arrays), map (for objects).",
+                      "type": "array"
+                    },
+                    "actions.maxItemsComputed": {
+                      "default": 5000,
+                      "description": "The maximum number of outline symbols and folding regions computed (limited for performance reasons).",
+                      "type": "integer"
+                    },
+                    "actions.editor.tabSize": {
+                      "default": 2,
+                      "description": "The number of spaces to use when autocompleting",
+                      "type": "integer"
+                    },
+                    "actions.format.enable": {
+                      "default": true,
+                      "description": "Enable/disable default YAML formatter",
+                      "type": "boolean"
+                    },
+                    "actions.format.singleQuote": {
+                      "default": false,
+                      "description": "Use single quotes instead of double quotes",
+                      "type": "boolean"
+                    },
+                    "actions.format.bracketSpacing": {
+                      "default": true,
+                      "description": "Print spaces between brackets in objects",
+                      "type": "boolean"
+                    },
+                    "actions.format.proseWrap": {
+                      "default": "preserve",
+                      "description": "Always: wrap prose if it exceeds the print width, Never: never wrap the prose, Preserve: wrap prose as-is",
+                      "type": "string"
+                    },
+                    "actions.format.printWidth": {
+                      "default": 120,
+                      "description": "Specify the line length that the printer will wrap on",
+                      "type": "integer"
+                    },
+                    "actions.hover": {
+                      "default": true,
+                      "description": "Enable/disable hover feature",
+                      "type": "boolean"
+                    },
+                    "actions.schemas": {
+                      "default": {},
+                      "description": "Associate schemas to YAML files in the current workspace",
+                      "type": "object"
+                    },
+                    "actions.schemaStore.enable": {
+                      "default": true,
+                      "description": "Automatically pull available YAML schemas from JSON Schema Store",
+                      "type": "boolean"
+                    },
+                    "actions.schemaStore.url": {
+                      "default": "https://www.schemastore.org/api/json/catalog.json",
+                      "description": "URL of schema store catalog to use",
+                      "type": "string"
+                    },
+                    "actions.validate": {
+                      "default": true,
+                      "description": "Enable/disable validation feature",
+                      "type": "boolean"
+                    },
+                    "actions.disableAdditionalProperties": {
+                      "default": false,
+                      "description": "Globally set additionalProperties to false if additionalProperties is not set and if schema.type is object. So if its true, no extra properties are allowed inside yaml.",
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "file_patterns": [
+          "/*.sublime-project"
+        ],
+        "schema": {
+          "properties": {
+            "settings": {
+              "properties": {
+                "LSP": {
+                  "properties": {
+                    "LSP-actions": {
+                      "$ref": "sublime://settings/LSP-actions#/definitions/PluginConfig"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
