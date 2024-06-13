@@ -1,6 +1,25 @@
 {
   "private": true,
+  "name": "LSP-actions",
+  "version": "0.1.0",
+  "description": "Github Actions support for Sublime's LSP plugin",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "lsp-actions": "./cli.js --stdio"
+  },
+  "engines": {
+    "node": ">=20.14.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "start": "./cli.js --stdio"
+  },
   "dependencies": {
     "@actions/languageserver": "^0.3.10"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6",
+    "tsup": "^7.2.0"
   }
 }
