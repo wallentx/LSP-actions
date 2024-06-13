@@ -1,25 +1,39 @@
 {
   "private": true,
-  "name": "LSP-actions",
-  "version": "0.1.0",
-  "description": "Github Actions support for Sublime's LSP plugin",
+  "name": "@wallentx/lsp-actions",
+  "homepage": "https://github.com/wallentx/LSP-actions",
   "type": "module",
   "main": "dist/cli.js",
+  "version": "0.1.0",
+  "description": "Github Actions support for Sublime's LSP plugin",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
-    "lsp-actions": "./cli.js --stdio"
+    "lsp-actions": "npx tsx dist/cli.js"
   },
   "engines": {
-    "node": ">=20.14.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "tsup",
-    "start": "./cli.js --stdio"
+    "build": "node build.mjs",
+    "start": "npx tsx dist/cli.js --stdio"
   },
+  "keywords": [
+    "github",
+    "actions",
+    "github-actions",
+    "languageserver"
+  ],
+  "author": "wallentx",
+  "license": "MIT",
   "dependencies": {
-    "@actions/languageserver": "^0.3.10"
+    "@actions/languageserver": "<=0.3.7"
   },
   "devDependencies": {
+    "esbuild": "^0.21.5",
+    "tsup": "^7.2.0",
     "typescript": "^5.1.6",
-    "tsup": "^7.2.0"
+    "vscode-uri": "<=3.0.7"
   }
 }
