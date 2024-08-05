@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.23.0",
-    "tsup": "^8.2.3",
+    "tsup": "^8.2.4",
     "typescript": "^5.5.3",
     "vscode-uri": "<=3.0.9"
   }
