@@ -4,3 +4,11 @@ updates:
     directory: "/language-server"
     schedule:
       interval: "daily"
+  - package-ecosystem: "github-actions"
+    directories:
+      - '**/*'
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "github-actions"
+      include: "scope"
