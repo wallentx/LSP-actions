@@ -31,7 +31,7 @@
     "@actions/languageserver": "<=0.3.58"
   },
   "devDependencies": {
-    "esbuild": "^0.28.0",
+    "esbuild": "^0.28.1",
     "tsup": "^8.5.1",
     "typescript": "^6.0.3",
     "vscode-uri": "<=3.1.1"
