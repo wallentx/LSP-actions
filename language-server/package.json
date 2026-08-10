@@ -28,7 +28,7 @@
   "author": "wallentx",
   "license": "MIT",
   "dependencies": {
-    "@actions/languageserver": "<=0.3.60"
+    "@actions/languageserver": "<=0.3.62"
   },
   "devDependencies": {
     "esbuild": "^0.28.1",
